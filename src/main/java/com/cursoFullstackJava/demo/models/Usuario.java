@@ -1,6 +1,18 @@
 package com.cursoFullstackJava.demo.models;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "usuarios")
+@ToString @EqualsAndHashCode
 public class Usuario {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private Long id;
     private String name;
     private String lastName;
