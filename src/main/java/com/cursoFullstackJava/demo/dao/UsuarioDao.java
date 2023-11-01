@@ -13,5 +13,5 @@ public interface UsuarioDao {
 
     void registrar(Usuario usuario);
 
-    Usuario verificarCredenciales(Usuario usuario);
+    Usuario obtenerUsuarioPorCredenciales(Usuario usuario);
 }

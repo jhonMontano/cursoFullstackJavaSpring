@@ -15,10 +15,20 @@ async function iniciarSesion() {
         },
         body: JSON.stringify(datos)
     });
+
     const response = await rawResponse.text();
-    if(response === 'OK'){
+    if(response != 'FAIL') {
+        localStorage.token = response;
+        localStorage.email = datos.email;
         window.location.href = 'usuarios.html';
-    }else{
-        alert("User y/o password incorrects. Please try again")
+    } else {
+        alert("User or password incorrect. Please try again.");
     }
+
+    /*const response = await rawResponse.text();
+        if(response === 'OK') {
+            window.location.href = 'usuarios.html';
+        } else {
+            alert("User and/or password incorrect. Please try again.");
+        }*/
 }
