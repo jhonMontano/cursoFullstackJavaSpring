@@ -58,6 +58,11 @@
 			<version>2.7</version>
 		</dependency>
 		<dependency>
+			<!-- JSON Web Token Support security
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>-->
 			<!-- JSON Web Token Support -->
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt</artifactId>

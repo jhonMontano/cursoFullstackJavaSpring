@@ -23,14 +23,14 @@ public class UsuarioController {
         return usuarioId != null;
     }
 
-    @RequestMapping(value = "api/usuarios", method = RequestMethod.GET)
+    @GetMapping(value = "api/usuarios")
     public List<Usuario> getUsuarios(@RequestHeader(value="Authorization") String token) {
         if (!validarToken(token)) { return null; }
 
         return usuarioDao.getUsuarios();
     }
 
-    @RequestMapping(value = "api/usuarios", method = RequestMethod.POST)
+    @PostMapping(value = "api/usuarios")
     public void registrarUsuario(@RequestBody Usuario usuario) {
 
         Argon2 argon2 = Argon2Factory.create(Argon2Factory.Argon2Types.ARGON2id);
@@ -40,7 +40,7 @@ public class UsuarioController {
         usuarioDao.registrar(usuario);
     }
 
-    @RequestMapping(value = "api/usuarios/{id}", method = RequestMethod.DELETE)
+    @DeleteMapping(value = "api/usuarios/{id}")
     public void eliminar(@RequestHeader(value="Authorization") String token,
                          @PathVariable Long id) {
         if (!validarToken(token)) { return; }

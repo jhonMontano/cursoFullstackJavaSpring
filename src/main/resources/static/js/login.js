@@ -24,11 +24,4 @@ async function iniciarSesion() {
     } else {
         alert("User or password incorrect. Please try again.");
     }
-
-    /*const response = await rawResponse.text();
-        if(response === 'OK') {
-            window.location.href = 'usuarios.html';
-        } else {
-            alert("User and/or password incorrect. Please try again.");
-        }*/
 }
